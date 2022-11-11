@@ -1,0 +1,92 @@
+:root {
+	--background: hsl(0, 0%, 5%);
+	--dark-grey: hsl(0, 0%, 20%);
+	--top-bar-height: 50px;
+	--bottom-bar-height: 50px;
+}
+
+* :not(head) {
+	box-sizing: border-box;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	background-color: var(--background);
+	color: white;
+	font-family: Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+body {
+	flex-direction: column;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: var(--top-bar-height);
+	padding: 0 10px;
+	border-bottom: 1px solid var(--dark-grey);
+	z-index: 1;
+	box-shadow: 0px 5px 10px var(--background);
+}
+
+span#titles {
+	align-items: baseline;
+}
+
+button#settings {
+	padding-right: 5px;
+}
+
+button#settings #settings-icon {
+	color: var(--dark-grey);
+	font-size: 20px;
+}
+
+button {
+	background-color: unset;
+	border: none;
+	cursor: pointer;
+}
+
+h1#title {
+	font-size: 32px;
+	user-select: none;
+	color: white;
+	/* bottom: -8px; */
+}
+
+h2#subtitle {
+	margin-left: 5px;
+	font-size: 16px;
+	color: white;
+	/* bottom: -8px; */
+	font-style: italic;
+	border-bottom: 2px dotted grey;
+	cursor: pointer;
+}
+
+span.tag {
+	border-radius: 5px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+span.tag-name {
+	border: 2px solid var(--dark-grey);
+	background-color: var(--dark-grey);
+	padding: 5px;
+	color: var(--background);
+}
+
+span.tag-value {
+	border: 2px solid var(--dark-grey);
+	padding: 5px;
+	color: var(--dark-grey);
+}

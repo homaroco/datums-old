@@ -1,0 +1,65 @@
+#datum-bar div.tags {
+	gap: 5px;
+}
+
+button#add-datum {
+	/* border: 1px solid lightgrey; */
+	height: 30px;
+	aspect-ratio: 1 / 1;
+}
+
+button#add-datum i {
+	color: var(--dark-grey);
+	font-size: 20px;
+}
+
+#datum-bar .tag-container {
+	gap: 10px;
+}
+
+button#add-tag {
+	border: 2px dotted var(--dark-grey);
+	padding: 5px;
+	border-radius: 5px;
+	color: var(--dark-grey);
+}
+
+button#add-tag:hover {
+	border-color: white;
+	color: white;
+}
+
+button#add-tag .new-tag-plus-icon {
+	margin-right: 5px;
+	color: var(--dark-grey);
+}
+
+button#add-tag:hover .new-tag-plus-icon {
+	color: white;
+}
+
+footer#datum-bar {
+	position: fixed;
+	padding: 0 10px;
+	justify-content: space-between;
+	bottom: 0;
+	width: 100%;
+	height: var(--bottom-bar-height);
+	border-top: 1px solid var(--dark-grey);
+}
+
+span.tag.no-value {
+	padding-right: 0;
+}
+
+span.add-tag-value-btn {
+	border: 2px dotted;
+	border-left: none !important;
+	padding-left: 9px;
+	padding-right: 7px;
+	/* background-color: var(--background); */
+}
+
+.new-tag-value-plus-icon {
+	/* color: var(--dark-grey); */
+}

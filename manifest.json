@@ -1,0 +1,43 @@
+{
+	"short_name": "datums",
+	"name": "datums: your personal data",
+	"icons": [
+		{
+			"src": "/images/datums-logo-16.png",
+			"type": "image/png",
+			"sizes": "16x16"
+		},
+		{
+			"src": "/images/datums-logo-32.png",
+			"type": "image/png",
+			"sizes": "32x32"
+		},
+		{
+			"src": "/images/datums-logo-48.png",
+			"type": "image/png",
+			"sizes": "48x48"
+		},
+		{
+			"src": "/images/datums-logo-128.png",
+			"type": "image/png",
+			"sizes": "128x128",
+			"purpose": "maskable"
+		},
+		{
+			"src": "/images/datums-logo-192.png",
+			"type": "image/png",
+			"sizes": "192x192",
+			"purpose": "maskable"
+		},
+		{
+			"src": "/images/datums-logo-512.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "maskable"
+		}
+	],
+	"start_url": "/",
+	"background_color": "#0d0d0d",
+	"display": "standalone",
+	"theme_color": "#0d0d0d"
+}
