@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>datums</title>
+    <title>Datums - Your Always-Private Personal Data</title>
     <meta charset="utf-8">
+    <meta name="theme-color" content="hsl(0, 0%, 5%)">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="datums.ico">
+    <link rel="icon" href="images/datums.ico">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/datum-bar.css">
@@ -17,12 +18,17 @@
   </head>
   <body>
 		<header>
-      <span id="titles">
-        <h1 id="title">datums</h1>
-        <h2 id="subtitle">new to old</h2>
+      <span id="datum-list-filter-sort-btns">
+        <button id="datum-list-sort" class="header-btn">
+          <i id="datum-list-sort-icon" class="fa-solid fa-sort header-btn-icon"></i>
+        </button>
+        <button id="datum-list-filter" class="header-btn">
+          <i id="datum-list-filter-icon" class="fa-solid fa-filter header-btn-icon"></i>
+        </button>
       </span>
-      <button id="settings">
-        <i id="settings-icon" class="fa-solid fa-gear"></i>
+      <h1 id="title">Datums</h1>
+      <button id="settings" class="header-btn">
+        <i id="settings-icon" class="fa-solid fa-gear header-btn-icon"></i>
       </button>
 		</header>
     <section id="datum-list">

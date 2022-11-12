@@ -2,17 +2,16 @@ function turnAddTagBtnIntoInput() {
 	console.log('clicked:', this)
 }
 
-function createDatum() {
+async function createDatum() {
+	const datum = convertDatumToHtml(await fetchRandomDatum())
 	$('#datum-list ul').append(
 		$('<li>').append(
-			convertDatumObjToHtml({
-				tags: [
-					{ name: 'ayy', value: 'bravo' },
-					{ name: 'another', value: 'test' },
-					{ name: 'noval', value: null},
-				]
-			})
-		))
+			datum
+	))
+	datum[0].scrollIntoView({
+		behavior: 'smooth'
+	})
+	await colorAllTagsRandomly()
 }
 
 function openDatumMenu() {

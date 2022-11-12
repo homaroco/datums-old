@@ -46,6 +46,7 @@ footer#datum-bar {
 	width: 100%;
 	height: var(--bottom-bar-height);
 	border-top: 1px solid var(--dark-grey);
+	box-shadow: 0px 10px 15px 15px var(--background);
 }
 
 span.tag.no-value {

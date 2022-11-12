@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+
 :root {
 	--background: hsl(0, 0%, 5%);
 	--dark-grey: hsl(0, 0%, 20%);
@@ -15,7 +17,7 @@
 	padding: 0;
 	background-color: var(--background);
 	color: white;
-	font-family: Helvetica, sans-serif;
+	font-family: 'Nunito', Helvetica, sans-serif;
 	font-size: 14px;
 }
 
@@ -33,20 +35,7 @@ header {
 	padding: 0 10px;
 	border-bottom: 1px solid var(--dark-grey);
 	z-index: 1;
-	box-shadow: 0px 5px 10px var(--background);
-}
-
-span#titles {
-	align-items: baseline;
-}
-
-button#settings {
-	padding-right: 5px;
-}
-
-button#settings #settings-icon {
-	color: var(--dark-grey);
-	font-size: 20px;
+	box-shadow: 0px -15px 15px 15px var(--background);
 }
 
 button {
@@ -55,38 +44,54 @@ button {
 	cursor: pointer;
 }
 
+button.header-btn {
+	padding: 5px;
+	width: 30px; /* 20px font-size + 5px + 5px padding */
+	aspect-ratio: 1 / 1;
+}
+
+.header-btn-icon {
+	color: grey;
+	font-size: 20px;
+}
+
 h1#title {
 	font-size: 32px;
 	user-select: none;
 	color: white;
-	/* bottom: -8px; */
 }
 
-h2#subtitle {
-	margin-left: 5px;
-	font-size: 16px;
-	color: white;
-	/* bottom: -8px; */
-	font-style: italic;
-	border-bottom: 2px dotted grey;
-	cursor: pointer;
+button#settings {
+	/* center title in header, balance against width of sort
+	and filter buttons (30px + 30px) */
+	margin-left: 30px;
 }
 
 span.tag {
 	border-radius: 5px;
 	overflow: hidden;
 	cursor: pointer;
+	white-space: nowrap;
 }
 
 span.tag-name {
 	border: 2px solid var(--dark-grey);
 	background-color: var(--dark-grey);
-	padding: 5px;
+	padding: 3px 6px;
 	color: var(--background);
+	font-weight: 700; /* TODO */
+	border-radius: 5px;
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+	/* border-right: none; */
 }
 
 span.tag-value {
 	border: 2px solid var(--dark-grey);
-	padding: 5px;
+	padding: 3px 6px;
 	color: var(--dark-grey);
+	border-radius: 5px;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+	border-left: none;
 }

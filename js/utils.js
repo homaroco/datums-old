@@ -1,3 +1,5 @@
+const print = (...args) => console.log(...args)
+
 const getRandomHex = () => {
 	const letters = '0123456789ABCDEF'.split('')
 	let color = ''
@@ -35,13 +37,13 @@ const colorTagRandomly = async tag => {
 	})
 }
 
-const convertDatumObjToHtml = datum => (
+const convertDatumToHtml = datum => (
 	$('<div class="datum">').append(
 		$('<span class="tags">').append(
 			...datum.tags.map(tag => (
 				$('<span class="tag">').append(
 					$('<span class="tag-name">').text(tag.name),
-					$('<span class="tag-value">').text(tag.value),
+					tag.value ? $('<span class="tag-value">').text(tag.value) : null,
 				)
 			))
 		)
@@ -63,4 +65,43 @@ const colorTag = ({
 	$(tag).find('.tag-value').css('color', bgColor)
 	$(tag).find('.tag-value').css('background-color', color)
 	$(tag).find('.tag-value').css('border-color', bgColor)
+}
+
+const fetchRandomDatum = async () => {
+	const numberOfTags = Math.ceil(Math.random() * 5)
+	const response = await fetch('words.json')
+	const words = await response.json()
+	const tagNames = []
+	for (let i = 0; i < numberOfTags; i++) {
+		const randomIndex = Math.floor(Math.random() * words.length)
+		tagNames.push(words[randomIndex])
+	}
+	const tags = tagNames.map(async tagName => {
+		let tagValue = null
+		const hasTagValue = Math.floor(Math.random() * 3) // 67% chance
+		if (hasTagValue) {
+			const isWord = Math.round(Math.random())
+			if (isWord) {
+				const randomIndex = Math.floor(Math.random() * words.length)
+				tagValue = words[randomIndex]
+			} else {
+				tagValue = Math.ceil(Math.random() * 100)
+			}
+		}
+		const colorData = await fetchRandomColor()
+		const color = colorData.name.closest_named_hex
+		let contrastColor = colorData.contrast.value
+		if (contrastColor === '#000000') contrastColor = 'hsl(0, 0%, 5%)'
+		return {
+			name: tagName,
+			value: tagValue,
+			color,
+			contrastColor,
+		}
+	})
+	return {
+		tags: await Promise.all(tags),
+		id: 1,
+		time: Date.now(),
+	}
 }

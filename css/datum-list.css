@@ -2,6 +2,12 @@ section#datum-list,
 section#datum-list ul,
 section#datum-list li {
 	width: 100%;
+	overflow: scroll;
+}
+
+section#datum-list li {
+	overflow: scroll;
+	border-bottom: 1px solid var(--dark-grey)
 }
 
 section#datum-list ul {
@@ -15,7 +21,6 @@ div.datum {
 	padding: 10px 0;
 	margin: 0 10px;
 	width: 100%;
-	border-bottom: 1px solid var(--dark-grey)
 }
 
 .datum .tags {
@@ -33,6 +38,6 @@ button.open-datum-menu i {
 	font-size: 20px;
 }
 
-#datum-list ul:last-child  {
+section#datum-list ul:last-child {
 	border-bottom: none;
 }
