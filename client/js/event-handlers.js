@@ -23,7 +23,8 @@ async function addDatum() {
 }
 
 function openDatumMenu() {
-	
+	console.log('click menu')
+	$('<div class="datum-menu">').show()
 }
 
 async function openTagMenu() {

@@ -22,9 +22,9 @@ section#datum-list ul {
 	flex-direction: column;
 }
 
-div.datum {
+.datum {
 	justify-content: space-between;
-	padding: 10px;
+	padding: 0 10px;
 	width: 100%;
 }
 
@@ -39,16 +39,18 @@ div.datum {
 	overflow: auto;
 	gap: 5px;
 	flex-grow: 1;
+	padding: 10px 0;
 }
 
-button.open-datum-menu {
+.open-datum-menu {
 	/* border: 1px solid lightgrey; */
 	height: 30px;
 	aspect-ratio: 1 / 1;
+	margin: 10px 0;
 	margin-left: 10px;
 }
 
-button.open-datum-menu i {
+.open-datum-menu i {
 	color: var(--dark-grey);
 	font-size: 20px;
 }
