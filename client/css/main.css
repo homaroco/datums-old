@@ -21,8 +21,15 @@
 	font-size: 14px;
 }
 
+html {
+	height: 100%;
+	overflow: hidden;
+}
+
 body {
 	flex-direction: column;
+	height: 100%;
+	overflow: auto;
 }
 
 header {
@@ -44,9 +51,23 @@ button {
 	cursor: pointer;
 }
 
+.no-blue-on-select {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.no-blue-on-select:focus {
+	outline: none !important;
+}
+
 button.header-btn {
 	padding: 5px;
-	width: 30px; /* 20px font-size + 5px + 5px padding */
+	width: 30px;
+	/* 20px font-size + 5px + 5px padding */
 	aspect-ratio: 1 / 1;
 }
 
@@ -55,10 +76,53 @@ button.header-btn {
 	font-size: 20px;
 }
 
+.header-btn-icon:hover {
+	color: white;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 h1#title {
 	font-size: 32px;
 	user-select: none;
-	color: white;
+	background: linear-gradient(
+		-45deg, 
+		rgba(255, 0, 0, 1) 0%,
+		rgba(255, 154, 0, 1) 5%,
+		rgba(208, 222, 33, 1) 10%,
+		rgba(79, 220, 74, 1) 15%,
+		rgba(63, 218, 216, 1) 20%,
+		rgba(47, 201, 226, 1) 25%,
+		rgba(28, 127, 238, 1) 30%,
+		rgba(95, 21, 242, 1) 35%,
+		rgba(186, 12, 248, 1) 40%,
+		rgba(251, 7, 217, 1) 45%,
+		rgba(255, 0, 0, 1) 50%,
+		rgba(255, 154, 0, 1) 55%,
+		rgba(208, 222, 33, 1) 60%,
+		rgba(79, 220, 74, 1) 65%,
+		rgba(63, 218, 216, 1) 70%,
+		rgba(47, 201, 226, 1) 75%,
+		rgba(28, 127, 238, 1) 80%,
+		rgba(95, 21, 242, 1) 85%,
+		rgba(186, 12, 248, 1) 90%,
+		rgba(251, 7, 217, 1) 95%,
+		rgba(255, 0, 0, 1) 100%
+	);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	background-size: 1000% 1000%;
+	animation: 30s linear infinite gradient;
 }
 
 button#settings {
@@ -72,6 +136,7 @@ span.tag {
 	overflow: hidden;
 	cursor: pointer;
 	white-space: nowrap;
+	flex: 0 0 auto;
 }
 
 span.tag-name {
@@ -79,7 +144,8 @@ span.tag-name {
 	background-color: var(--dark-grey);
 	padding: 3px 6px;
 	color: var(--background);
-	font-weight: 700; /* TODO */
+	font-weight: 700;
+	/* TODO */
 	border-radius: 5px;
 	border-bottom-right-radius: 0;
 	border-top-right-radius: 0;

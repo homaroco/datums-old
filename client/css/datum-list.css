@@ -1,0 +1,71 @@
+section#datum-list,
+section#datum-list ul,
+section#datum-list li {
+	width: 100%;
+}
+
+section#datum-list {
+	margin-top: var(--top-bar-height);
+	margin-bottom: var(--bottom-bar-height);
+	overflow: scroll;
+	align-items: flex-start;
+	height: 100%;
+	overscroll-behavior: auto;
+}
+
+section#datum-list li {
+	overflow: scroll;
+	border-bottom: 1px solid var(--dark-grey)
+}
+
+section#datum-list ul {
+	flex-direction: column;
+}
+
+div.datum {
+	justify-content: space-between;
+	padding: 10px;
+	width: 100%;
+}
+
+.tags {
+	overflow: auto;
+	flex-grow: 1;
+	justify-content: flex-start;
+}
+
+.tags-scroll-container {
+	justify-content: flex-start;
+	overflow: auto;
+	gap: 5px;
+	flex-grow: 1;
+}
+
+button.open-datum-menu {
+	/* border: 1px solid lightgrey; */
+	height: 30px;
+	aspect-ratio: 1 / 1;
+	margin-left: 10px;
+}
+
+button.open-datum-menu i {
+	color: var(--dark-grey);
+	font-size: 20px;
+}
+
+section#datum-list ul:last-child {
+	border-bottom: none;
+}
+
+.timestamp {
+	font-size: 12px;
+	color: var(--dark-grey);
+	margin-left: 10px;
+	align-self: stretch;
+	box-shadow: -5px 0px 15px 20px var(--background);
+}
+
+.timestamp-fade-spacer {
+	flex: 0 0 10px;
+	height: 10px; /* arbitrary */
+}

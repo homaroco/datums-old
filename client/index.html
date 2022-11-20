@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Datums - Private Personal Data</title>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="hsl(0, 0%, 5%)">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/datums.ico">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/datum-bar.css">
+    <link rel="stylesheet" href="css/datum-list.css">
+    <script src="https://kit.fontawesome.com/c3a39656ff.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cash/8.1.1/cash.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/event-handlers.js"></script>
+    <script src="js/index.js"></script>
+  </head>
+  <body>
+		<header>
+      <span id="datum-list-filter-sort-btns">
+        <button id="datum-list-sort" class="header-btn">
+          <i id="datum-list-sort-icon" class="fa-solid fa-sort header-btn-icon"></i>
+        </button>
+        <button id="datum-list-filter" class="header-btn">
+          <i id="datum-list-filter-icon" class="fa-solid fa-filter header-btn-icon"></i>
+        </button>
+      </span>
+      <h1 id="title">Datums</h1>
+      <button id="settings" class="header-btn">
+        <i id="settings-icon" class="fa-solid fa-gear header-btn-icon"></i>
+      </button>
+		</header>
+    <section id="datum-list">
+      <ul></ul>
+    </section>
+    <footer id="datum-bar">
+      <span class="tag-container">
+        <button id="add-tag">
+          <i class="fa-solid fa-plus new-tag-plus-icon"></i>
+          new tag
+        </button>
+        <input id="add-tag-input" class="no-blue-on-select" autocomplete="off">
+      </span>
+			<button id="add-datum">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </footer>
+  </body>
+</html>
