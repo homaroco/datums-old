@@ -24,7 +24,7 @@ async function addDatum() {
 
 function openDatumMenu() {
 	console.log('click menu')
-	$('<div class="datum-menu">').show()
+	$(this).closest('.datum').find('.datum-menu').css('display', 'flex')
 }
 
 async function openTagMenu() {

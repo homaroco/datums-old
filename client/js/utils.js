@@ -39,20 +39,20 @@ const colorTagRandomly = async (tag) => {
   });
 };
 
-const convertDatumToHtml = (datum) =>
-  $('<div class="datum">').append(
+const convertDatumToHtml = (datum) => {
+  const datumEl = $('<div class="datum">').append(
     $('<span class="tags">').append(
       $('<span class="tags-scroll-container">').append(
         ...datum.tags.map((tag) =>
           $('<span class="tag">').append(
             $('<span class="tag-name">').text(tag.name).css({
-              color: tag.contrastColor,
+              "color": tag.contrastColor,
               "background-color": tag.color,
               "border-color": tag.color,
             }),
             tag.value
               ? $('<span class="tag-value">').text(tag.value).css({
-                  color: tag.color,
+                  "color": tag.color,
                   "background-color": tag.contrastColor,
                   "border-color": tag.color,
                 })
@@ -66,7 +66,10 @@ const convertDatumToHtml = (datum) =>
     $('<button class="open-datum-menu">').append(
       $('<i class="fa-solid fa-ellipsis">')
     )
-  );
+  )
+  $('.datum-menu').first().clone().appendTo(datumEl)
+  return datumEl
+}
 
 const convertHtmlToDatum = (html) => {
   const tags = $(html)

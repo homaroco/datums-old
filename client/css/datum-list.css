@@ -14,7 +14,6 @@ section#datum-list {
 }
 
 section#datum-list li {
-	overflow: scroll;
 	border-bottom: 1px solid var(--dark-grey)
 }
 
@@ -51,8 +50,12 @@ section#datum-list ul {
 }
 
 .open-datum-menu i {
-	color: var(--dark-grey);
+	color: grey;
 	font-size: 20px;
+}
+
+.open-datum-menu:hover i {
+	color: white;
 }
 
 section#datum-list ul:last-child {
@@ -64,10 +67,38 @@ section#datum-list ul:last-child {
 	color: var(--dark-grey);
 	margin-left: 10px;
 	align-self: stretch;
-	box-shadow: -5px 0px 15px 20px var(--background);
+	/* box-shadow: -5px 0px 15px 20px var(--background); */
 }
 
 .timestamp-fade-spacer {
 	flex: 0 0 10px;
 	height: 10px; /* arbitrary */
+}
+
+.datum-menu {
+	display: none;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	width: auto;
+	flex-direction: column;
+	align-items: flex-start;
+	border: 1px solid var(--dark-grey);
+	border-radius: 5px;
+	z-index: 1;
+	padding: 0 10px;
+	box-shadow: 0px 0px 10px 2px var(--background);
+}
+
+.datum-menu-item {
+	position: relative;
+	padding: 10px 0;
+	text-align: start;
+	width: 100%;
+	border-top: 1px solid var(--dark-grey);
+	justify-content: flex-start;
+}
+
+.datum-menu :first-child {
+	border-top: none;
 }

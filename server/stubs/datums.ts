@@ -24,7 +24,17 @@ const getRandomDatum = async () => {
 
 	// get a random color palette
 	const colorHex = getRandomFrom(colors).hex
-	const response = await fetch(`https://www.thecolorapi.com/scheme?hex=${colorHex}&count=${numberOfTags}`)
+	const schemeMode = getRandomFrom([
+		'monochrome',
+		// 'monochrome-dark',
+		// 'monochrome-light',
+		'analogic',
+		// 'complement',
+		'analogic-complement',
+		// 'triad',
+		// 'quad',
+	])
+	const response = await fetch(`https://www.thecolorapi.com/scheme?hex=${colorHex}&mode=${schemeMode}&count=${numberOfTags}`)
 	const json = await response.json()
 	const colorScheme = json.colors
 
