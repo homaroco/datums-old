@@ -23,8 +23,15 @@ async function addDatum() {
 }
 
 function openDatumMenu() {
-	console.log('click menu')
 	$(this).closest('.datum').find('.datum-menu').css('display', 'flex')
+	$(this).closest('.datum').css('z-index', 2)
+	$('#click-away-screen').show()
+}
+
+function closeMenus() {
+	$('.datum-menu').hide()
+	$('#click-away-screen').hide()
+	$('.datum').css('z-index', 0)
 }
 
 async function openTagMenu() {
@@ -68,4 +75,16 @@ function replaceAddTagInputWithBtn() {
 	$('#add-tag').show()
 
 	updateAddDatumBtnState()
+}
+
+async function deleteDatum() {
+	const datum = convertHtmlToDatum($(this).closest('.datum'))
+	const response = await fetch(`https://api.datums.app/datums/${datum.id}`, {
+		method: 'DELETE'
+	})
+	const json = await response.json()
+	if (json.success) {
+		$(this).closest('li').remove()
+		closeMenus()
+	}
 }

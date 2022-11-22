@@ -17,4 +17,6 @@ $(async () => {
 	$('#settings').on('click', fetchRandomDatum)
 	$('#add-tag-input').on('keypress', addTag)
 	$('#add-tag-input').on('blur', replaceAddTagInputWithBtn)
+	$('#click-away-screen').on('click', closeMenus)
+	$('.item-delete-datum').on('click', deleteDatum)
 })

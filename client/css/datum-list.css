@@ -85,7 +85,7 @@ section#datum-list ul:last-child {
 	align-items: flex-start;
 	border: 1px solid var(--dark-grey);
 	border-radius: 5px;
-	z-index: 1;
+	z-index: 3;
 	padding: 0 10px;
 	box-shadow: 0px 0px 10px 2px var(--background);
 }
@@ -101,4 +101,10 @@ section#datum-list ul:last-child {
 
 .datum-menu :first-child {
 	border-top: none;
+}
+
+.tags-fade {
+	width: 10px;
+	height: 25px;
+	box-shadow: -5px 0px 10px 10px var(--background);
 }

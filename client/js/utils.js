@@ -62,12 +62,15 @@ const convertDatumToHtml = (datum) => {
 				$('<span class="timestamp-fade-spacer">')
       )
     ),
+    $('<span class="tags-fade">'),
     $('<span class="timestamp">').text(getTimestamp(datum.time)),
     $('<button class="open-datum-menu">').append(
       $('<i class="fa-solid fa-ellipsis">')
     )
   )
   $('.datum-menu').first().clone().appendTo(datumEl)
+  datumEl.data('id', datum.id)
+  datumEl.data('time', datum.time)
   return datumEl
 }
 
@@ -83,8 +86,11 @@ const convertHtmlToDatum = (html) => {
       };
     })
     .get(); // get converts object into array
+  const id = $(html).data('id')
+  const time = $(html).data('time')
   return {
-    time: Date.now(),
+    id,
+    time,
     tags,
   };
 };

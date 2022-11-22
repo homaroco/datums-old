@@ -62,5 +62,12 @@ export default {
     }
   },
   updateDatumById: () => {},
-  deleteDatumById: () => {},
+  deleteDatumById: ({ params, response }: { params: { id: string }, response: any}) => {
+    const allDatums = datums.filter(d => d.id !== params.id)
+    response.status = 200
+    response.body = {
+      success: true,
+      data: allDatums,
+    }
+  },
 };
