@@ -1,1 +1,1 @@
-# Datums - Your Always-Private Personal Data
+# Datums - Private Personal Data
