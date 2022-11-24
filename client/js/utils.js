@@ -226,3 +226,24 @@ function prettyDate(time, short = false) {
 
   return r;
 }
+
+const renderView = (viewName = '/') => {
+  $('.view').hide()
+  if (viewName === '/') {
+    $('#list').show()
+    history.pushState({}, '', '/list')
+    return
+  }
+  if (viewName[0] === '/') viewName = viewName.substring(1)
+  const viewNames = $('.view').map(function() {
+    return this.id
+  }).get()
+  print(viewNames)
+  if (!viewNames.includes(viewName)) {
+    $('#404').show()
+    history.pushState({}, '', '/404')
+    return
+  }
+  $(`#${viewName}`).show()
+  history.pushState({}, '', `/${viewName}`)
+}

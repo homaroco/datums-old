@@ -1,4 +1,5 @@
 $(async () => {
+	renderView(window.location.pathname)
 	const response = await fetch('https://api.datums.app/datums')
 	const json = await response.json()
 	const datums = json.data
