@@ -20,4 +20,5 @@ $(async () => {
 	$('#add-tag-input').on('blur', replaceAddTagInputWithBtn)
 	$('#click-away-screen').on('click', closeMenus)
 	$('.item-delete-datum').on('click', deleteDatum)
+	$('#settings').on('click', openSettingsMenu)
 })

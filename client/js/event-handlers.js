@@ -29,6 +29,7 @@ function openDatumMenu() {
 }
 
 function closeMenus() {
+	$('.menu').hide()
 	$('.datum-menu').hide()
 	$('#click-away-screen').hide()
 	$('.datum').css('z-index', 0)
@@ -87,4 +88,9 @@ async function deleteDatum() {
 		$(this).closest('li').remove()
 		closeMenus()
 	}
+}
+
+function openSettingsMenu() {
+	$('#click-away-screen').show()
+	$('.settings-menu').css('display', 'flex')
 }
