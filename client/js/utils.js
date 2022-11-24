@@ -8,7 +8,7 @@ const getRandomHex = () => {
     color += letters[random];
   }
   return color;
-};
+}
 
 const fetchRandomColor = async () => {
   const randomHex = getRandomHex();

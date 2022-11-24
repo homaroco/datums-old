@@ -1,16 +1,20 @@
-import { getContrastColorFor } from '../utils.ts'
+import { 
+	getContrastColorFor,
+	convertHexToHsl,
+	getRandomHex,
+} from '../utils.ts'
 import words from '../words.ts'
 import colors from '../colors.ts'
 import Datum from '../interfaces/Datum.ts'
 
-const DATUM_COUNT = 100
+const DATUM_COUNT = 1000
 
 const getRandomFrom = (array: any[]): any => {
 	const randomIndex = Math.floor(Math.random() * array.length)
 	return array[randomIndex]
 }
 
-const getRandomDatum = async () => {
+const getRandomDatum = () => {
 	const numberOfTags = Math.ceil(Math.random() * 5)
 
 	// put one or two words together to make tag names
@@ -23,23 +27,30 @@ const getRandomDatum = async () => {
 	}
 
 	// get a random color palette
-	const colorHex = getRandomFrom(colors).hex
-	const schemeMode = getRandomFrom([
-		'monochrome',
-		// 'monochrome-dark',
-		// 'monochrome-light',
-		'analogic',
-		// 'complement',
-		'analogic-complement',
-		// 'triad',
-		// 'quad',
-	])
-	const response = await fetch(`https://www.thecolorapi.com/scheme?hex=${colorHex}&mode=${schemeMode}&count=${numberOfTags}`)
-	const json = await response.json()
-	const colorScheme = json.colors
+	// const colorHex = getRandomFrom(colors).hex
+	// const schemeMode = getRandomFrom([
+	// 	'monochrome',
+	// 	// 'monochrome-dark',
+	// 	// 'monochrome-light',
+	// 	'analogic',
+	// 	// 'complement',
+	// 	'analogic-complement',
+	// 	// 'triad',
+	// 	// 'quad',
+	// ])
+	// const response = await fetch(`https://www.thecolorapi.com/scheme?hex=${colorHex}&mode=${schemeMode}&count=${numberOfTags}`)
+	// const json = await response.json()
+	// const colorScheme = json.colors
 
 	// add a color, maybe add a number/word tag value
 	const tags = tagNames.map((tagName, i) => {
+		let colorHex, s, l
+		do {
+			colorHex = getRandomHex()
+			const hsl = convertHexToHsl(colorHex)
+			s = hsl.s
+			l = hsl.l
+		} while (s < 0.33 || l > 0.8 || l < 0.5)
 		// maybe tag value
 		let tagValue = null
 		const hasTagValue = Math.floor(Math.random() * 3) // 67%
@@ -53,7 +64,7 @@ const getRandomDatum = async () => {
 		}
 
 		// tag colors
-		const color = colorScheme[i].hex.value
+		const color = '#' + colorHex
 		const contrastColor = getContrastColorFor(color)
 
 		return {
