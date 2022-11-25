@@ -100,7 +100,7 @@ button.header-btn {
 	}
 }
 
-h1#title {
+.title {
 	font-size: 32px;
 	user-select: none;
 	background: linear-gradient(

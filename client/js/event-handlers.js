@@ -94,3 +94,8 @@ function openSettingsMenu() {
 	$('#click-away-screen').show()
 	$('.settings-menu').css('display', 'flex')
 }
+
+function navigateToLoginView() {
+	closeMenus()
+	renderView('login')
+}

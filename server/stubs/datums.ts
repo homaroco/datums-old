@@ -50,7 +50,7 @@ const getRandomDatum = () => {
 			const hsl = convertHexToHsl(colorHex)
 			s = hsl.s
 			l = hsl.l
-		} while (s < 0.33 || l < 0.33)
+		} while (s < 0.20 || s > 0.80 || l < 0.20 || l > 0.80) // s < 0.33 || l < 0.25
 		// maybe tag value
 		let tagValue = null
 		const hasTagValue = Math.floor(Math.random() * 3) // 67%

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/datum-bar.css" />
     <link rel="stylesheet" href="css/datum-list.css" />
+    <link rel="stylesheet" href="css/login.css" />
     <script
       src="https://kit.fontawesome.com/c3a39656ff.js"
       crossorigin="anonymous"
@@ -23,8 +24,27 @@
   <body>
     <div id="login" class="view">
       <header>
-        <h1 id="title">Datums</h1>
+        <h1 class="title">Datums</h1>
       </header>
+      <div class="login-input-label-container">
+        <label for="username">Username</label>
+      </div>
+      <div class="login-input-container">
+        <input type="text" name="username" class="no-blue-on-select">
+      </div>
+      <div class="login-input-label-container">
+        <label for="email">Email (optional)</label>
+      </div>
+      <div class="login-input-container">
+        <input type="text" name="email" class="no-blue-on-select">
+      </div>
+      <div class="login-input-label-container">
+        <label for="password">Password</label>
+      </div>
+      <div class="login-input-container">  
+        <input type="password" name="password" class="no-blue-on-select">
+      </div>
+      <button class="login-btn">Sign in</button>
     </div>
     <div id="list" class="view">
       <header>
@@ -42,7 +62,7 @@
             ></i>
           </button>
         </span>
-        <h1 id="title">Datums</h1>
+        <h1 class="title">Datums</h1>
         <button id="settings" class="header-btn">
           <i id="settings-icon" class="fa-solid fa-gear header-btn-icon"></i>
         </button>

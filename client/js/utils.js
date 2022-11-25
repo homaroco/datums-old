@@ -227,23 +227,30 @@ function prettyDate(time, short = false) {
   return r;
 }
 
-const renderView = (viewName = '/') => {
+const renderView = (viewName = '/', firstLoad = false) => {
   $('.view').hide()
-  if (viewName === '/') {
-    $('#list').show()
-    history.pushState({}, '', '/list')
-    return
-  }
+  // if (viewName === '/') {
+  //   $('#list').show()
+  //   if (firstLoad) {
+  //     history.replaceState({}, '', '/list')
+  //   } else {
+  //     history.pushState({}, '', '/list')
+  //   }
+  //   document.title = 'Datums - List View'
+  //   return
+  // }
   if (viewName[0] === '/') viewName = viewName.substring(1)
   const viewNames = $('.view').map(function() {
     return this.id
   }).get()
-  print(viewNames)
-  if (!viewNames.includes(viewName)) {
+  if (!viewNames.includes(viewName) || viewName === '404') {
     $('#404').show()
-    history.pushState({}, '', '/404')
+    // history.pushState({}, '', '/404')
+    document.title = 'Datums - Page Not Found'
     return
   }
   $(`#${viewName}`).show()
-  history.pushState({}, '', `/${viewName}`)
+  // history.pushState({}, '', `/${viewName}`)
+  const capitalizedViewName = viewName.charAt(0).toUpperCase() + viewName.slice(1)
+  document.title = `Datums - ${capitalizedViewName} View`
 }

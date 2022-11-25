@@ -11,6 +11,7 @@ $(async () => {
 		)
 	})
 
+	$(window).on('popstate', () => renderView(window.location.pathname))
 	$('.open-datum-menu').on('click', openDatumMenu)
 	$('#add-tag').on('click', turnAddTagBtnIntoInput)
 	$('#add-datum').on('click', addDatum)
@@ -21,4 +22,5 @@ $(async () => {
 	$('#click-away-screen').on('click', closeMenus)
 	$('.item-delete-datum').on('click', deleteDatum)
 	$('#settings').on('click', openSettingsMenu)
+	$('.item-login').on('click', navigateToLoginView)
 })
