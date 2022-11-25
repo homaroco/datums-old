@@ -7,7 +7,7 @@ import words from '../words.ts'
 import colors from '../colors.ts'
 import Datum from '../interfaces/Datum.ts'
 
-const DATUM_COUNT = 1000
+const DATUM_COUNT = 100
 
 const getRandomFrom = (array: any[]): any => {
 	const randomIndex = Math.floor(Math.random() * array.length)

@@ -1,28 +1,38 @@
-#login {
+#login,
+#register
+{
 	/* padding-top: var(--top-bar-height); */
 	flex-direction: column;
 	justify-content: flex-start;
 	--column-width: 200px;
 }
 
-#login header {
+#login header,
+#register header 
+{
 	border: none;
 	justify-content: center;
 	position: relative;
 	margin-bottom: 25px;
 }
 
-#login .subtitle {
+#login .subtitle,
+#register .subtitle
+{
 	font-size: 22px;
 	margin-bottom: 25px;
 }
 
-#login label {
+#login label,
+#register label
+{
 	font-size: 18px;
 	color: grey;
 }
 
-#login input {
+#login input,
+#register input
+{
 	border: 1px solid grey;
 	border-radius: 5px;
 	padding: 5px;
@@ -30,23 +40,33 @@
 	width: var(--column-width);
 }
 
-#login input:focus, #login input:hover {
+#login input:focus,
+#login input:hover,
+#register input:focus,
+#register input:hover
+{
 	border-width: 2px;
 	border-color: white;
 	margin: 0px;
 }
 
-.login-input-label-container {
+.login-input-label-container,
+.register-input-label-container
+{
 	justify-content: flex-start;
 	width: var(--column-width);
 }
 
-.login-input-container {
+.login-input-container,
+.register-input-container
+{
 	margin-bottom: 20px;
 	margin-top: 5px;
 }
 
-.login-btn {
+.login-btn,
+.register-btn
+{
 	font-size: 18px;
 	width: var(--column-width);
 	padding: 5px;
@@ -78,6 +98,7 @@
 	color: var(--background);
 	background-size: 1000% 1000%;
 	animation: 30s linear infinite gradient;
+	margin-top: 15px;
 }
 
 .title {

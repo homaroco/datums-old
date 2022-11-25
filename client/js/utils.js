@@ -245,12 +245,12 @@ const renderView = (viewName = '/', firstLoad = false) => {
   }).get()
   if (!viewNames.includes(viewName) || viewName === '404') {
     $('#404').show()
-    history.pushState({}, '/404', '/404')
+    history.pushState({ view: viewName }, '/404', '/404')
     document.title = 'Datums - Page Not Found'
     return
   }
   $(`#${viewName}`).show()
-  history.pushState({}, `/${viewName}`, `/${viewName}`)
+  history.pushState({ view: viewName }, `/${viewName}`, `/${viewName}`)
   const capitalizedViewName = viewName.charAt(0).toUpperCase() + viewName.slice(1)
   document.title = `Datums - ${capitalizedViewName} View`
 }

@@ -1,4 +1,4 @@
-export const getContrastColorFor = (color) => {
+export const getContrastColorFor = (color: string) => {
   color = (color.charAt(0) === '#') ? color.substring(1, 7) : color
   const r = parseInt(color.substring(0, 2), 16) // hexToR
   const g = parseInt(color.substring(2, 4), 16) // hexToG
@@ -14,7 +14,7 @@ export const getContrastColorFor = (color) => {
   return (L > 0.179) ? '#0d0d0d' : 'white'
 }
 
-const convertHexToRgb = hex => {
+const convertHexToRgb = (hex: string) => {
   if (hex[0] === '#') hex = hex.substring(1)
   return {
     r: parseInt(hex.substr(0, 2), 16),
@@ -23,13 +23,15 @@ const convertHexToRgb = hex => {
   }
 }
 
-const convertRgbToHsl = ({r, g, b}) => {
+const convertRgbToHsl = ({r, g, b}: { r: number, g: number, b: number}) => {
   r /= 255
   g /= 255
   b /= 255
   const max = Math.max(r, g, b)
   const min = Math.min(r, g, b)
-  let h, s, l = (max + min) / 2
+  let h = (max + min) / 2
+  let s = (max + min) / 2
+  const l = (max + min) / 2
 
   if (max === min) {
     h = s = 0 // achromatic
@@ -46,11 +48,11 @@ const convertRgbToHsl = ({r, g, b}) => {
   return { h, s, l }
 }
 
-export const convertHexToHsl = hex => {
+export const convertHexToHsl = (hex: string) => {
   return convertRgbToHsl(convertHexToRgb(hex))
 }
 
-const convertHexValueToHslValue = hex => {
+const convertHexValueToHslValue = (hex: string) => {
   const { h, s, l } = convertRgbToHsl(convertHexToRgb(hex))
   // console.log(h, s, l)
   const hVal = Math.round(h * 360)
