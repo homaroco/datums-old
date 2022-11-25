@@ -99,3 +99,15 @@ function navigateToLoginView() {
 	closeMenus()
 	renderView('login')
 }
+
+function handleInputFocus() {
+	const inputName = $(this).attr('name')
+	$(`#login label[for=${inputName}]`).css('color', 'white')
+}
+
+function handleInputBlur() {
+	const inputName = $(this).attr('name')
+	if (!$(this).val()) {
+		$(`#login label[for=${inputName}]`).css('color', 'grey')
+	}
+}

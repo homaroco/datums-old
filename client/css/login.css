@@ -19,6 +19,7 @@
 
 #login label {
 	font-size: 18px;
+	color: grey;
 }
 
 #login input {
@@ -29,7 +30,7 @@
 	width: var(--column-width);
 }
 
-#login input:focus {
+#login input:focus, #login input:hover {
 	border-width: 2px;
 	border-color: white;
 	margin: 0px;

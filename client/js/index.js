@@ -12,6 +12,8 @@ $(async () => {
 	})
 
 	$(window).on('popstate', () => renderView(window.location.pathname))
+
+	// List view
 	$('.open-datum-menu').on('click', openDatumMenu)
 	$('#add-tag').on('click', turnAddTagBtnIntoInput)
 	$('#add-datum').on('click', addDatum)
@@ -19,8 +21,13 @@ $(async () => {
 	$('#settings').on('click', fetchRandomDatum)
 	$('#add-tag-input').on('keypress', addTag)
 	$('#add-tag-input').on('blur', replaceAddTagInputWithBtn)
-	$('#click-away-screen').on('click', closeMenus)
 	$('.item-delete-datum').on('click', deleteDatum)
 	$('#settings').on('click', openSettingsMenu)
 	$('.item-login').on('click', navigateToLoginView)
+	
+	// Login view
+	$('#login input').on('focus', handleInputFocus)
+	$('#login input').on('blur', handleInputBlur)
+	
+	$('#click-away-screen').on('click', closeMenus)
 })
