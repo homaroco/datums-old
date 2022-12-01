@@ -41,6 +41,10 @@ $(async () => {
 	// Register view
 	$('#register input').on('focus', handleInputFocus)
 	$('#register input').on('blur', handleInputBlur)
+	$('#register-username-input').on('input', handleRegisterUsernameChange)
+	$('#register-password-input').on('input', handleRegisterPasswordChange)
+	$('#register-email-input').on('input', handleRegisterEmailChange)
+	$('.register-btn').on('click', registerUser)
 	
 	$('#click-away-screen').on('click', closeMenus)
 })

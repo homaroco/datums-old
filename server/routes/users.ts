@@ -1,5 +1,5 @@
 import { Router } from 'https://deno.land/x/oak/mod.ts'
-import usersController from '../controllers/datums.ts'
+import usersController from '../controllers/users.ts'
 
 const router = new Router()
 router

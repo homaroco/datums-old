@@ -102,6 +102,9 @@ function navigateToLoginView() {
 
 function navigateToRegisterView() {
 	closeMenus()
+	$('.register-input-and-label-container').hide()
+	$('.register-btn').hide()
+	$('#register-username-field').show()
 	renderView('register')
 }
 

@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-unused-vars
 const print = (...args) => console.log(...args);
 
 const getRandomHex = () => {
@@ -19,7 +20,7 @@ const fetchRandomColor = async () => {
   return json;
 };
 
-const colorAllTagsRandomly = async () => {
+const colorAllTagsRandomly = () => {
   $(document)
     .find(".tag")
     .each(function () {
@@ -170,61 +171,6 @@ const getTimestamp = time => {
 			|| (dayDiff < 365 && Math.floor(dayDiff / 30) + 'mo')
 			|| (Math.floor(dayDiff / 365) + 'y')
 	))
-}
-
-function prettyDate(time, short = false) {
-  var date = new Date(
-      (time || "").replace(/-/g, "/").replace(/[TZ]/g, " ") + " UTC"
-    ),
-    diff = (new Date().getTime() - date.getTime()) / 1000,
-    day_diff = Math.floor(diff / 86400);
-  var year = date.getFullYear(),
-    month = date.getMonth() + 1,
-    day = date.getDate();
-
-  if (diff < 0) return "Just now";
-  if (isNaN(day_diff) || day_diff < 0)
-    return (
-      year.toString() +
-      "-" +
-      (month < 10 ? "0" + month.toString() : month.toString()) +
-      "-" +
-      (day < 10 ? "0" + day.toString() : day.toString())
-    );
-	
-	var r;
-  if (!short) {
-    r =
-      (day_diff == 0 &&
-        ((diff < 5 && "Just now") ||
-          (diff < 60 && Math.floor(diff) + " seconds ago") ||
-          (diff < 120 && "1 minute ago") ||
-          (diff < 3600 && Math.floor(diff / 60) + " minutes ago") ||
-          (diff < 7200 && "1 hour ago") ||
-          (diff < 86400 && Math.floor(diff / 3600) + " hours ago"))) ||
-      (day_diff == 1 && "Yesterday") ||
-      (day_diff < 7 && day_diff + " days ago") ||
-      (day_diff < 30 && Math.floor(day_diff / 7) + " weeks ago") ||
-      (day_diff < 30 * 2 && "1 month ago") ||
-      (day_diff < 365 && Math.floor((day_diff / 7) * 4) + " months ago") ||
-      (day_diff < 365 * 2 && "1 year ago") ||
-      Math.floor(day_diff / 365) + " years ago";
-  } else {
-    r =
-      (day_diff == 0 &&
-        ((diff < 5 && "Just now") ||
-          (diff < 60 && Math.floor(diff) + "s") ||
-          (diff < 120 && "1m") ||
-          (diff < 3600 && Math.floor(diff / 60) + "m") ||
-          (diff < 7200 && "1h") ||
-          (diff < 86400 && Math.floor(diff / 3600) + "h"))) ||
-      (day_diff < 7 && day_diff + "d") ||
-      (day_diff < 30 && Math.floor(day_diff / 7) + "w") ||
-      (day_diff < 365 && Math.floor(day_diff / 30) + "mo") ||
-      Math.floor(day_diff / 365) + "y";
-  }
-
-  return r;
 }
 
 const renderView = (viewName = '/', firstLoad = false) => {

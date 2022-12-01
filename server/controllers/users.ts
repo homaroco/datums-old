@@ -1,4 +1,6 @@
-import users from "../stubs/users.ts";
+import * as bcrypt from 'https://deno.land/x/bcrypt/mod.ts'
+
+// import users from "../stubs/users.ts";
 import User from "../interfaces/User.ts";
 
 export default {
@@ -49,16 +51,19 @@ export default {
       }
       return
     }
-    const { time, tags } = await body.value
+    const { username, password, email } = await body.value
     const newUser: User = {
-      id: crypto.randomUUID(),
-      time,
-      tags,
+      uuid: crypto.randomUUID(),
+      username,
+      password_hash: await bcrypt.hash(password),
+      email,
+      time_created: Date.now(),
+      is_active: true,
     }
     response.status = 200
     response.body = {
       success: true,
-      data: newUser,
+      data: `User ${username} created`,
     }
   },
   updateUserById: () => {},

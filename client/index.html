@@ -16,9 +16,15 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cash/8.1.1/cash.min.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/event-handlers.js"></script>
-    <script src="js/index.js"></script>
+    <script async src="js/utils.js"></script>
+    <script async src="js/auth.js"></script>
+    <script async src="js/event-handlers/index.js"></script>
+    <script async src="js/event-handlers/auth.js"></script>
+    <script async src="js/index.js"></script>
+    <script>
+      /*to prevent Firefox FOUC, this must be here*/
+      let FF_FOUC_FIX;
+    </script>
   </head>
 
   <body>
@@ -44,23 +50,30 @@
       <header>
         <h1 class="title">Datums</h1>
       </header>
-      <div class="register-input-label-container">
-        <label for="username">Username</label>
+      <h2 class="subtitle">Let's get started! Enter a username</h2>
+      <div id='register-username-field' class="register-input-and-label-container">
+        <div class="register-input-label-container">
+          <label for="username">Username</label>
+        </div>
+        <div class="register-input-container">
+          <input id='register-username-input' type="text" name="username" class="no-blue-on-select">
+        </div>
       </div>
-      <div class="register-input-container">
-        <input type="text" name="username" class="no-blue-on-select">
+      <div id='register-password-field' class="register-input-and-label-container">
+        <div class="register-input-label-container">
+          <label for="password">Password</label>
+        </div>
+        <div class="register-input-container">  
+          <input id="register-password-input" type="password" name="password" class="no-blue-on-select">
+        </div>
       </div>
-      <div class="register-input-label-container">
-        <label for="email">Email (optional)</label>
-      </div>
-      <div class="register-input-container">
-        <input type="text" name="email" class="no-blue-on-select">
-      </div>
-      <div class="register-input-label-container">
-        <label for="password">Password</label>
-      </div>
-      <div class="register-input-container">  
-        <input type="password" name="password" class="no-blue-on-select">
+      <div id='register-email-field' class="register-input-and-label-container">
+        <div class="register-input-label-container">
+          <label for="email">Email (optional)</label>
+        </div>
+        <div class="register-input-container">
+          <input id="register-email-input" type="text" name="email" class="no-blue-on-select">
+        </div>
       </div>
       <button class="register-btn">Sign up</button>
     </div>

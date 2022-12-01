@@ -4,11 +4,11 @@ import {
 	getRandomHex,
 } from '../utils.ts'
 import words from '../words.ts'
-import colors from '../colors.ts'
 import Datum from '../interfaces/Datum.ts'
 
-const DATUM_COUNT = 100
+const DATUM_COUNT = 2000
 
+// deno-lint-ignore no-explicit-any
 const getRandomFrom = (array: any[]): any => {
 	const randomIndex = Math.floor(Math.random() * array.length)
 	return array[randomIndex]
@@ -43,7 +43,7 @@ const getRandomDatum = () => {
 	// const colorScheme = json.colors
 
 	// add a color, maybe add a number/word tag value
-	const tags = tagNames.map((tagName, i) => {
+	const tags = tagNames.map(tagName => {
 		let colorHex, s, l
 		do {
 			colorHex = getRandomHex()
@@ -84,7 +84,7 @@ const getRandomDatum = () => {
 }
 
 // export an array of datums
-let datums: Datum[] = []
+const datums: Datum[] = []
 for (let i = 0; i < DATUM_COUNT; i++) {
 	console.log('Getting random datum number', i + '...')
 	datums.push(await getRandomDatum())

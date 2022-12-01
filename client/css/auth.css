@@ -50,6 +50,17 @@
 	margin: 0px;
 }
 
+.login-input-and-label-container,
+.register-input-and-label-container
+{
+	display: none;
+	flex-direction: column;
+}
+
+#register-username-field {
+	display: flex;
+}
+
 .login-input-label-container,
 .register-input-label-container
 {
@@ -99,6 +110,7 @@
 	background-size: 1000% 1000%;
 	animation: 30s linear infinite gradient;
 	margin-top: 15px;
+	display: none;
 }
 
 .title {
