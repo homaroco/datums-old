@@ -137,7 +137,7 @@ button.header-btn {
 button#settings {
 	/* center title in header, balance against width of sort
 	and filter buttons (30px + 30px) */
-	margin-left: 30px;
+	margin-left: 5px;
 }
 
 span.tag {

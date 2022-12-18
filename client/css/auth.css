@@ -10,7 +10,6 @@
 #login header,
 #register header 
 {
-	border: none;
 	justify-content: center;
 	position: relative;
 	margin-bottom: 25px;
@@ -142,6 +141,7 @@
 	);
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text;
+	background-clip: text;
 	background-size: 1000% 1000%;
 	animation: 30s linear infinite gradient;
 }

@@ -108,3 +108,7 @@ section#datum-list ul:last-child {
 	height: 25px;
 	box-shadow: -5px 0px 10px 10px var(--background);
 }
+
+button#datum-list-sort {
+	margin-right: 5px;
+}

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/datum-list.css" />
     <link rel="stylesheet" href="css/auth.css" />
     <script
+      async
       src="https://kit.fontawesome.com/c3a39656ff.js"
       crossorigin="anonymous"
     ></script>
@@ -94,9 +95,14 @@
           </button>
         </span>
         <h1 class="title">Datums</h1>
-        <button id="settings" class="header-btn">
-          <i id="settings-icon" class="fa-solid fa-gear header-btn-icon"></i>
-        </button>
+        <span id="views-and-settings-btns">
+          <button id="views" class="header-btn">
+            <i id="views-icon" class="fa-solid fa-grip header-btn-icon"></i>
+          </button>
+          <button id="settings" class="header-btn">
+            <i id="settings-icon" class="fa-solid fa-gear header-btn-icon"></i>
+          </button>
+        </span>
       </header>
       <div class="menu settings-menu">
         <button class="settings-menu-item item-view-settings">List view settings</button>
@@ -170,6 +176,9 @@
     </div>
     <div id="test" class="view">
       ayy lmao
+    </div>
+    <div id="tag" class="view">
+      
     </div>
   </body>
 </html>
